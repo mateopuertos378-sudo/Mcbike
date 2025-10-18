@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="ibiwkbqeqpzafgiwzwz60l7fogvbsi" />
+    <title>Mcbike - Bicicletas y Accesorios Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #38a169 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="bike-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23bike-pattern)"/></svg>');
+            animation: bikeMove 20s infinite linear;
+        }
+
+        @keyframes bikeMove {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: bikeGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes bikeGlow {
+            from { 
+                text-shadow: 4px 4px 8px rgba(0,0,0,0.3), 0 0 40px rgba(56, 161, 105, 0.3);
+                transform: scale(1);
+            }
+            to { 
+                text-shadow: 4px 4px 8px rgba(0,0,0,0.3), 0 0 60px rgba(56, 161, 105, 0.5);
+                transform: scale(1.02);
+            }
+        }
+
+        .logo-subtitle {
+            font-size: 1.6rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            font-weight: 400;
+            color: #f7fafc;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+            opacity: 0.95;
+            font-weight: 400;
+            color: #e2e8f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #38a169, #2f855a);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(56, 161, 105, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(56, 161, 105, 0.5);
+            color: white;
+            text-decoration: none;
+            border-color: rgba(56, 161, 105, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(26, 54, 93, 0.95);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(56, 161, 105, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(56, 161, 105, 0.2);
+            color: #f7fafc;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .section-title {
+            font-size: 3.2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #38a169;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(45deg, #38a169, #2f855a);
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 80px;
+            font-weight: 400;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 60px;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #2d3748;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .experience-highlight {
+            background: linear-gradient(45deg, #38a169, #2f855a);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 15px 40px rgba(56, 161, 105, 0.3);
+        }
+
+        .experience-highlight h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border-top: 6px solid #38a169;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(45deg, #38a169, #2f855a);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            color: #38a169;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.15);
+            color: #2f855a;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            border-left: 8px solid #38a169;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 15px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-list li:hover {
+            color: #38a169;
+            padding-left: 35px;
+        }
+
+        .service-list li:before {
+            content: "🚴";
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-list li:hover:before {
+            transform: translateX(8px);
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            border-color: #38a169;
+        }
+
+        .team-member img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 6px solid #38a169;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.08);
+            border-color: #2f855a;
+        }
+
+        .team-member h4 {
+            font-size: 1.6rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .team-member .position {
+            color: #38a169;
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #f7fafc;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item:hover {
+            background: rgba(56, 161, 105, 0.2);
+            transform: translateX(8px);
+        }
+
+        .contact-item i {
+            color: #f7fafc;
+            margin-right: 25px;
+            margin-top: 5px;
+            width: 30px;
+            font-size: 1.4rem;
+        }
+
+        .contact-item span {
+            line-height: 1.6;
+            font-size: 1.2rem;
+        }
+
+        .business-hours {
+            background: rgba(255,255,255,0.15);
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .business-hours h4 {
+            color: #f7fafc;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .business-hours p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .business-hours strong {
+            color: #f7fafc;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 40px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background: linear-gradient(45deg, #128c7e, #25d366);
+            transform: scale(1.15);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid,
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .header-content {
+                padding: 40px 0;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+            }
+
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Bike-specific styling */
+        .highlight-text {
+            color: #38a169;
+            font-weight: 600;
+        }
+
+        .mission-section {
+            background: linear-gradient(45deg, #38a169, #2f855a);
+            color: #ffffff;
+            padding: 60px;
+            border-radius: 25px;
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(56, 161, 105, 0.3);
+        }
+
+        .mission-section h3 {
+            margin-bottom: 25px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .mission-section p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        /* Bike animation */
+        .bike-animation {
+            display: inline-block;
+            animation: bikeRide 2s ease-in-out infinite;
+        }
+
+        @keyframes bikeRide {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Mcbike</h1>
+                <p class="logo-subtitle">Tu Tienda de Bicicletas Premium</p>
+                <p class="tagline">En Mcbike, ofrecemos las mejores bicicletas, accesorios y servicios de mantenimiento. Desde bicicletas urbanas hasta mountain bikes de alta gama, tenemos todo lo que necesitas para tu aventura sobre dos ruedas.</p>
+                <a href="#contact" class="cta-button">Ver Catálogo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir Mcbike?</h2>
+            <p class="section-subtitle">Calidad, experiencia y pasión por el ciclismo</p>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Mcbike es tu tienda especializada en bicicletas y accesorios de alta calidad. Con años de experiencia en el mundo del ciclismo, ofrecemos una amplia gama de productos que van desde bicicletas urbanas hasta mountain bikes profesionales, siempre con el mejor asesoramiento y servicio técnico especializado.
+                    </p>
+                    <p class="about-text">
+                        Nuestra pasión por el ciclismo nos impulsa a ofrecer solo los mejores productos y servicios. Trabajamos con las marcas más reconocidas del mercado para garantizar que cada cliente encuentre la bicicleta perfecta para sus necesidades y estilo de vida.
+                    </p>
+                </div>
+                <div>
+                    <div class="experience-highlight">
+                        <h3>Calidad Garantizada</h3>
+                        <p>Productos de las mejores marcas con garantía oficial y servicio técnico especializado</p>
+                    </div>
+                    <p class="about-text">
+                        En Mcbike, cada bicicleta es cuidadosamente seleccionada y revisada por nuestro equipo de técnicos especializados. Ofrecemos <strong class="highlight-text">SERVICIO TÉCNICO PROFESIONAL</strong> con repuestos originales y mantenimiento especializado para todas las marcas.
+                    </p>
+                    <div class="mission-section">
+                        <h3>Nuestra Misión</h3>
+                        <p>Ser la tienda de bicicletas líder en Mar del Plata, ofreciendo productos de calidad, servicio técnico especializado y asesoramiento personalizado para que cada ciclista encuentre su bicicleta perfecta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">¿Qué nos hace únicos?</h2>
+            <p class="section-subtitle">Características que nos posicionan como líderes en el mundo del ciclismo</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3>Productos Premium</h3>
+                    <p>Ofrecemos bicicletas y accesorios de las marcas más reconocidas del mercado, garantizando calidad y durabilidad en cada producto.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Servicio Técnico</h3>
+                    <p>Nuestro equipo de técnicos especializados ofrece mantenimiento, reparaciones y ajustes profesionales para todas las marcas de bicicletas.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Asesoramiento Personalizado</h3>
+                    <p>Te ayudamos a encontrar la bicicleta perfecta según tus necesidades, presupuesto y estilo de ciclismo que practiques.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garantía Oficial</h3>
+                    <p>Todos nuestros productos cuentan con garantía oficial de fábrica y nuestro compromiso de satisfacción al 100%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Todo lo que necesitas para tu experiencia ciclística</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Venta de Bicicletas</h3>
+                    <p>Amplio catálogo de bicicletas para todos los gustos:</p>
+                    <ul class="service-list">
+                        <li>Bicicletas urbanas y de paseo</li>
+                        <li>Mountain bikes y de montaña</li>
+                        <li>Bicicletas de ruta y carretera</li>
+                        <li>Bicicletas eléctricas</li>
+                        <li>Bicicletas para niños</li>
+                        <li>Bicicletas plegables</li>
+                        <li>Bicicletas de BMX</li>
+                        <li>Bicicletas de triatlón</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Accesorios y Repuestos</h3>
+                    <p>Todo lo necesario para tu bicicleta:</p>
+                    <ul class="service-list">
+                        <li>Cascos y protecciones</li>
+                        <li>Luces y reflectores</li>
+                        <li>Porta equipaje y alforjas</li>
+                        <li>Ruedas y neumáticos</li>
+                        <li>Frenos y sistemas de frenado</li>
+                        <li>Cambios y desviadores</li>
+                        <li>Asientos y sillines</li>
+                        <li>Manillares y potencia</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Servicio Técnico</h3>
+                    <p>Mantenimiento profesional para tu bicicleta:</p>
+                    <ul class="service-list">
+                        <li>Mantenimiento general</li>
+                        <li>Ajuste de frenos y cambios</li>
+                        <li>Centrado de ruedas</li>
+                        <li>Limpieza y lubricación</li>
+                        <li>Reparación de pinchazos</li>
+                        <li>Montaje de componentes</li>
+                        <li>Diagnóstico completo</li>
+                        <li>Servicio a domicilio</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <p class="section-subtitle">Apasionados del ciclismo que te ayudarán a encontrar tu bicicleta perfecta</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Carlos Mendoza">
+                    <h4>Carlos Mendoza</h4>
+                    <p class="position">Fundador y Director</p>
+                    <p class="quote">"En Mcbike, cada bicicleta cuenta una historia. Nuestro objetivo es que encuentres la tuya y vivas aventuras inolvidables."</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Ana Rodríguez">
+                    <h4>Ana Rodríguez</h4>
+                    <p class="position">Especialista en Mountain Bike</p>
+                    <p class="quote">"La montaña es mi pasión. Te ayudo a elegir la bicicleta perfecta para conquistar cualquier sendero."</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Miguel Torres">
+                    <h4>Miguel Torres</h4>
+                    <p class="position">Técnico Especializado</p>
+                    <p class="quote">"Cada bicicleta merece el mejor cuidado. Con más de 15 años de experiencia, tu bici estará en las mejores manos."</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="Laura Fernández">
+                    <h4>Laura Fernández</h4>
+                    <p class="position">Especialista en Bicicletas Urbanas</p>
+                    <p class="quote">"La ciudad es tu pista. Te ayudo a encontrar la bicicleta perfecta para moverte por Mar del Plata con estilo y comodidad."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Listo para tu próxima aventura?</h2>
+            <p class="section-subtitle" style="color: #e2e8f0;">Visítanos y descubre el mundo Mcbike</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Zeballos 5210, Mar Del Plata</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+5491164728234</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@mcbike.com</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>CUIL: 20406358241</span>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="business-hours">
+                        <h4>Horarios de Atención</h4>
+                        <p><strong>Horario comercial:</strong></p>
+                        <p>Lunes a Viernes: 9:00 a 18:00 hs</p>
+                        <p>Sábados: 9:00 a 13:00 hs</p>
+                        <br>
+                        <p><strong>Servicio técnico:</strong></p>
+                        <p>Lunes a Viernes: 8:00 a 19:00 hs</p>
+                        <p>WhatsApp: +5491164728234</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mcbike. Todos los derechos reservados</p>
+            <p>Tu tienda de bicicletas de confianza en Mar del Plata</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scrolling effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(26, 54, 93, 0.98)';
+            } else {
+                nav.style.background = 'rgba(26, 54, 93, 0.95)';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards and service cards
+        document.querySelectorAll('.feature-card, .service-card, .team-member').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491164728234?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20las%20bicicletas%20de%20Mcbike" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
